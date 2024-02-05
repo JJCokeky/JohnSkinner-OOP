@@ -4,8 +4,9 @@ public class part3 {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        System.out.print("enter your letter grade: ");
-        short grade = input.nextShort();
+        System.out.print("enter your grade: ");
+        int grade = input.nextInt();
+        input.close();
 
         char letter = 'W';
 

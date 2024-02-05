@@ -5,19 +5,18 @@ public class part4 {
 
         Scanner input = new Scanner(System.in);
         System.out.print("enter your letter grade: ");
-        char letter = input.nextChar();
+        String letter = input.nextLine();
+        input.close();
 
-        char letter = 'C';
-
-        if (letter == 'A') {
+        if (letter == "A") {
             System.out.println("Great work");
-        } else if (letter == 'B') {
+        } else if (letter == "B") {
             System.out.println("Good work");
-        } else if (letter == 'C') {
+        } else if (letter == "C") {
             System.out.println("Average work");
-        } else if (letter == 'E') {
+        } else if (letter == "E") {
             System.out.println("Below average work");
-        } else if (letter == 'F') {
+        } else if (letter == "F") {
             System.out.println("Unsatisfactory work");
         } else {
             System.out.println("invaild");
