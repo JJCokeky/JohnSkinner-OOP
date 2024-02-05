@@ -1,9 +1,13 @@
+import java.util.Scanner;
+
 public class part3 {
     public static void main(String[] args) {
 
-        // Add Scanner funtion
-        char letter = 'C';
-        short grade = 1000;
+        Scanner input = new Scanner(System.in);
+        System.out.print("enter your letter grade: ");
+        short grade = input.nextShort();
+
+        char letter = 'W';
 
         if (grade >= 90 && grade <= 100) {
             letter = 'A';
