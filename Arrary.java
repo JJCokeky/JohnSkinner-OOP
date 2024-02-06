@@ -29,16 +29,16 @@ public class Arrary {
         // }
         // }
 
-        // int[][][] array4 = {
-        // { { 1, 2 }, { 3, 4 } },
-        // { { 5, 6, }, { 7, 8 } } };
+        int[][][] array4 = {
+                { { 1, 2 }, { 3, 4 } },
+                { { 5, 6, }, { 7, 8 } } };
 
-        // for (int i = 0; i < array4.length; ++i) {
-        // for (int j = 0; j < array4[i].length; ++j) {
-        // for (int Q = 0; Q < array4[i].length; ++Q)
-        // System.out.println(array4[i][j][Q]);
-        // }
-        // }
+        for (int i = 0; i < array4.length; ++i) {
+            for (int j = 0; j < array4[i].length; ++j) {
+                for (int Q = 0; Q < array4[i].length; ++Q)
+                    System.out.println(array4[i][j][Q]);
+            }
+        }
 
         // String seasons[] = { "Spring", "Summer", "Fall", "Winter" };
         // String checkValue = "Spring"; // value to search for
@@ -71,10 +71,27 @@ public class Arrary {
         // }
         // System.out.println("Largest Number is : " + largest); // largest will be 98
 
-        String[] languages = { "Java" };
-        String language = languages[1];
-        // this will print an error
-        System.out.println(language);
+        // String[] languages = { "Java" };
+        // String language = languages[1];
+        // // this will print an error
+        // System.out.println(language);
+
+        // just a concept of a 4d array
+        // length width hight inside/outside
+        // int[][][][] array5 = {
+        // { { 1, 2 }, { 3, 4 } },
+        // { { 5, 6 }, { 7, 8 } },
+        // { {9, 10 }, {11, ,12 } },
+        // { 14, 15 }, { 16, 17 } };
+
+        // for (int i = 0; i < array5.length; ++i) {
+        // for (int j = 0; j < array5[i].length; ++j) {
+        // for (int Q = 0; Q < array5[i].length; ++Q) {
+        // for (int w = 0; w < array5[i].length; ++w)
+        // System.out.println(array5[i][j][Q][w]);
+        // }
+        // }
+        // }
 
     }
 }
