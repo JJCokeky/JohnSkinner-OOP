@@ -8,7 +8,7 @@ public class part3 {
         int grade = input.nextInt();
         input.close();
 
-        char letter = 'W';
+        char letter = 'F';
 
         if (grade >= 90 && grade <= 100) {
             letter = 'A';
