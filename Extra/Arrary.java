@@ -3,15 +3,15 @@ import java.util.Arrays;
 public class Arrary {
     public static void main(String[] args) {
 
-        // int[] numbers = { 2, 4, 6, 8, 10 };
+        int[] numbers = { 2, 4, 6, 8, 10 };
 
-        // for (int i = 0; i < numbers.length; i++) {
-        // System.out.println(numbers[i]);
-        // }
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+        }
 
-        // for (int i : numbers) {
-        // System.out.println(i);
-        // }
+        for (int i : numbers) {
+            System.out.println(i);
+        }
 
         // int[][] array = new int[2][4];
 
@@ -29,16 +29,16 @@ public class Arrary {
         // }
         // }
 
-        int[][][] array4 = {
-                { { 1, 2 }, { 3, 4 } },
-                { { 5, 6, }, { 7, 8 } } };
+        // int[][][] array4 = {
+        // { { 1, 2 }, { 3, 4 } },
+        // { { 5, 6, }, { 7, 8 } } };
 
-        for (int i = 0; i < array4.length; ++i) {
-            for (int j = 0; j < array4[i].length; ++j) {
-                for (int Q = 0; Q < array4[i].length; ++Q)
-                    System.out.println(array4[i][j][Q]);
-            }
-        }
+        // for (int i = 0; i < array4.length; ++i) {
+        // for (int j = 0; j < array4[i].length; ++j) {
+        // for (int Q = 0; Q < array4[i].length; ++Q)
+        // System.out.println(array4[i][j][Q]);
+        // }
+        // }
 
         // String seasons[] = { "Spring", "Summer", "Fall", "Winter" };
         // String checkValue = "Spring"; // value to search for
