@@ -5,22 +5,19 @@ public class Methods {
     // rather than an instance of a class. So the method accessible to everything
     // instance of this Methods class
     // This method will add 2 number and display the result
-    public static void addNumbers()
-    {
+    public static void addNumbers() {
         int sum = 5 + 10;
         System.out.println("5 + 10 = " + sum);
     }
 
     // Return a value - is passed 1 parameter
-    public static int square(int num)
-    {
+    public static int square(int num) {
         // return squared value
         return num * num;
     }
 
     // Returns 2 parameters
-    public static int passing3Parmeters(int a, int b, int c)
-    {
+    public static int passing3Parmeters(int a, int b, int c) {
         // calculation
         int result = a * b * c;
         // return the result
@@ -29,33 +26,30 @@ public class Methods {
 
     // METHOD OVERLOADING
     // number of parameters: 1
-    public static void numberOfParameters(int a)
-    {
+    public static void numberOfParameters(int a) {
         System.out.println("Parameters: " + a);
     }
+
     // number of parameters: 1
-    public static void numberOfParameters(int a, int b)
-    {
+    public static void numberOfParameters(int a, int b) {
         System.out.println("Parameters: " + a + " and " + b);
     }
 
     // differnt data types
     // this accepts ints
-    public static void dataTypes(int a)
-    {
+    public static void dataTypes(int a) {
         System.out.println("Got integer data: " + a);
     }
+
     // this method accepts String
-    public static void dataTypes(String a)
-    {
+    public static void dataTypes(String a) {
         System.out.println("Got String data: " + a);
     }
 
     // METHOD RECURSION
-    public static int factorial(int n)
-    {
-        if(n !=0) // terminating condition
-            return n * factorial(n-1); // recursive call
+    public static int factorial(int n) {
+        if (n != 0) // terminating condition
+            return n * factorial(n - 1); // recursive call
         else
             return 1;
     }
@@ -77,8 +71,7 @@ public class Methods {
         System.out.println("_____________________");
 
         // calling a method inside a loop
-        for(int i = 1; i <=10; i++)
-        {
+        for (int i = 1; i <= 10; i++) {
             System.out.println("The square of " + i + " is " + square(i));
         }
 
@@ -99,7 +92,6 @@ public class Methods {
         int number = 4, results;
         results = factorial(number);
         System.out.println(number + " factorial = " + results);
-
 
     }
 }
