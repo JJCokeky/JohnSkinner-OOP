@@ -10,15 +10,23 @@ public class part1 {
 
         Scanner input = new Scanner(System.in);
         int[] numbers = new int[8];
+        int[] scores = new int[8];
 
         for (int i = 0; i < numbers.length; i++) {
             System.out.print("Please eneter score: ");
             numbers[i] = input.nextInt();
-            // try { numbers[i] >= 0 || <=100};
+            try {
+                if (numbers[i] >= 0 && numbers[i] <=100)
+                numbers[i] = scores[i];
+                else
+                System.out.print("");
+            } 
+            catch {
+                System.out.print("Wrong input");
+            }
 
-        }
         input.close();
-        System.out.println(numbers[0]);
+        System.out.println(scores[0]);
         System.out.println(numbers[1]);
         System.out.println(numbers[2]);
         System.out.println(numbers[3]);
@@ -26,7 +34,8 @@ public class part1 {
         System.out.println(numbers[5]);
         System.out.println(numbers[6]);
         System.out.println(numbers[7]);
-    }
+        }
+}
 }
 
 // int[] Numbers = new int[8]; // create the array to 8 digets
