@@ -18,10 +18,7 @@ class Rectangle implements Polygon {
 
     // overrides the getSides()
     public void getSides() {
-        System.out.println("I have 4 sides.");
-    }
-}
-
+        System.out.println("I have 4 sides.");S
 // implements the interface
 class Square implements Polygon {
     public void getArea() {
