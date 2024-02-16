@@ -6,8 +6,8 @@ public class Methods {
     // instance of this Methods class
     // This method will add 2 number and display the result
     public static void addNumbers() {
-        int sum = 5 + 10;
-        System.out.println("5 + 10 = " + sum);
+        int sum = 5 + 18;
+        System.out.println("5 + 18 = " + sum);
     }
 
     // Return a value - is passed 1 parameter
@@ -61,12 +61,12 @@ public class Methods {
 
         System.out.println("_____________________");
 
-        System.out.println("Squared value of 10 is: " + square(10));
+        System.out.println("Squared value of 10 is: " + square(2));
 
         System.out.println("_____________________");
 
         // passing 3 parameters
-        System.out.println("2 * 4 * 6 = " + passing3Parmeters(2, 4, 6));
+        System.out.println("2 * 4 * 4 = " + passing3Parmeters(2, 4, 4));
 
         System.out.println("_____________________");
 
