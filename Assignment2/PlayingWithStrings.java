@@ -1,6 +1,6 @@
 /*
  John Skinner
- 2024-02-15
+ 2024-02-16
  */
 
 public class PlayingWithStrings {
@@ -36,9 +36,9 @@ public class PlayingWithStrings {
         }
 
         if (lastName.toUpperCase().contains("NE")) { // check if name contains NE
-            System.out.println("Your lastname contains 'ne'");
+            System.out.println("Your last name contains 'ne'");
         } else {
-            System.out.println("Your lastname does not contain 'ne'");
+            System.out.println("Your last name does not contain 'ne'");
         }
 
     }
