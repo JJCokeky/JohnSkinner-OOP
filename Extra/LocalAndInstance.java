@@ -14,3 +14,20 @@ public class LocalAndInstance {
 // System.out.println(x);
 // }
 // }
+// x = 5;
+
+// public class LocalAndInstance {
+// int x; // instance variable
+// }
+
+// public LocalAndInstance() {
+// }
+
+// public static void main(String[] args) {
+// LocalAndInstance myObj = new LocalAndInstance();
+// System.out.println(myObj);
+// }
+
+// public static void main(String[] args) {
+// Car myCar = new Car();
+// }
