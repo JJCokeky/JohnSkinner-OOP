@@ -14,8 +14,12 @@ public class CreditCard {
         String holder1 = holder;
     }
 
-    private String DEFAULT_NAME() {
-        String name = "Bob Loblaws";
+    public CreditCard() {
+
+    private long DEFAULT_ACCOUNT_NUMBER = 1234567890123456L;
+    private int DEFULT_MONTH = 1;
+    private int DEFAULT_YEAR = 99;
+    private String DEFAULT_NAME = "Bob Loblaws";
     }
 
     // display card info

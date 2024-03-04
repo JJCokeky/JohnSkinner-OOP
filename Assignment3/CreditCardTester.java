@@ -1,14 +1,15 @@
 package Assignment3;
 
-public class Main {
+public class CreditCardTester {
     public static void main(String[] args) {
-        Student MyObject1 = new Student(); // The first one, is not passed arguments
-        Student MyObject2 = new Student(“Jane Smith”, 5312264554231345, 1, 10 (Jan 2024)); // The second one should be passed the values
-        Student MyObject3 = new Student(); // setter method 
+        CreditCard MyObject1 = new CreditCard(); // no passed arguments so display defult
+        CreditCard MyObject2 = new CreditCard(5312264554231345L, 1, 10, "Jane Smith"); // The second one should be
+                                                                                       // passed the values
+        CreditCard MyObject3 = new CreditCard(10234, 5, 8, "Neva Read"); // setter method
 
         // getter to display each variable
-        MyObject1.Getinfo();
-        MyObject2.Getinfo();
-        MyObject3.Getinfo();
+        MyObject1.displayCardInfo();
+        MyObject2.displayCardInfo();
+        MyObject3.displayCardInfo();
     }
 }
