@@ -1,5 +1,5 @@
 // John Skinner
-// 2024-02-23
+// 2024-03-04
 // Object- oriented programing
 
 package Assignment3;
@@ -13,10 +13,10 @@ public class CreditCard {
 
     // set the paramiters
     public CreditCard(long accountNumber1, int month1, int year1, String holder1) {
-        long accountNumber = accountNumber1;
-        int month = month1;
-        int year = year1;
-        String holder = holder1;
+        accountNumber = accountNumber1;
+        month = month1;
+        year = year1;
+        holder = holder1;
     }
 
     // create the defult values
@@ -25,6 +25,12 @@ public class CreditCard {
         int DEFULT_MONTH = 1;
         int DEFAULT_YEAR = 99;
         String DEFAULT_NAME = "Bob Loblaws";
+
+        // set defult values
+        accountNumber = DEFAULT_ACCOUNT_NUMBER;
+        month = DEFULT_MONTH;
+        year = DEFAULT_YEAR;
+        holder = DEFAULT_NAME;
     }
 
     // display card info
