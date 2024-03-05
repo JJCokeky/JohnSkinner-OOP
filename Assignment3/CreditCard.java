@@ -5,11 +5,13 @@
 package Assignment3;
 
 public class CreditCard {
+    // declare varables
     private long accountNumber;
     private int month;
     private int year;
     private String holder;
 
+    // set the paramiters
     public CreditCard(long accountNumber1, int month1, int year1, String holder1) {
         long accountNumber = accountNumber1;
         int month = month1;
@@ -17,7 +19,8 @@ public class CreditCard {
         String holder = holder1;
     }
 
-    public CreditCard() { // create the defult values
+    // create the defult values
+    public CreditCard() {
         long DEFAULT_ACCOUNT_NUMBER = 1234567890123456L;
         int DEFULT_MONTH = 1;
         int DEFAULT_YEAR = 99;
