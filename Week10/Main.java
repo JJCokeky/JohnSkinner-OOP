@@ -22,5 +22,11 @@ class Main {
         System.out.println("Removed Element: " + removedNumber);
 
         System.out.println("Updated Queue: " + numbers);
+
+        // not correct
+
+        // numbers.add(3);
+        // int added = numbers.peek();
+        // System.out.println("added number: " + added);
     }
 }

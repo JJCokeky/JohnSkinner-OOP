@@ -3,12 +3,12 @@ package week9;
 //user-defined exception in java
 import java.util.*;
 
-//custom exception to validate login credentials
-class InvalidCredentialsException extends Exception {
+//custom exception to validate withdrawal amount matches the minimum withdrawal limit
+class AmountLessThanRequiredExceptions extends Exception {
     // member variable to store our custom message
     String msg;
 
-    InvalidCredentialsException(String msg) {
+    AmountLessThanRequiredExceptions(String msg) {
         // passing the parameter to the super class constructor
         super(msg);
         this.msg = msg;
@@ -21,16 +21,16 @@ class InvalidCredentialsException extends Exception {
     }
 }
 
-public class Main {
-    public static void Main(String[] args) {
+public class AmountLessThanRequiredException {
+    public static void main(String[] args) {
+        System.out.print("Please eneter withdraw amount: ");
         Scanner sc = new Scanner(System.in);
-        String id = sc.next();
-        String password = sc.next();
+        int withdrawAmount = sc.nextInt();
         try {
-            if (id != "user1" || password != "1234") {
-                throw new InvalidCredentialsException("no such user with username - " + id);
+            if (withdrawAmount <= 0) { // checking if the amount is greater than zero or not
+                throw new AmountLessThanRequiredExceptions("Entered amount less than minimum withdrawal limit");
             }
-        } catch (InvalidCredentialsException ex) {
+        } catch (AmountLessThanRequiredExceptions ex) {
             // calls override toString() method
             System.out.println(ex);
             // prints message passed to the super constructor
