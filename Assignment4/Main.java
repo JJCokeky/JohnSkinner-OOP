@@ -62,5 +62,9 @@ class Car {
         getModel();
         getVIN();
         getYear();
+        System.out.println(make);
+        System.out.println(model);
+        System.out.println(VIN);
+        System.out.println(year);
     }
 }
