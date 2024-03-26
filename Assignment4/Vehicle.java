@@ -6,7 +6,7 @@ This program is designed to set and check that vin numbers are valid
 
 package Assignment4;
 
-public class Main {
+public class Vehicle {
 
 }
 
@@ -59,12 +59,12 @@ class Car {
 
     public void getVehicleInfo() {
         getMake();
-        // getModel();
-        // getYear();
-        // getVIN();
-        // System.out.println("Make: " + make);
-        // System.out.println("Model: " + model);
-        // System.out.println("Year: " + year);
-        // System.out.println("VIN: " + VIN);
+        getModel();
+        getYear();
+        getVIN();
+        System.out.println("Make: " + make);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("VIN: " + VIN);
     }
 }
