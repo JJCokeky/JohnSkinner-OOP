@@ -16,8 +16,8 @@ class Car {
     private int year;
     private String VIN;
 
-    public String getMake() {
-        return make;
+    public void getMake() {
+        System.out.println("Make: " + make);
     }
 
     public String getModel() {
@@ -59,12 +59,12 @@ class Car {
 
     public void getVehicleInfo() {
         getMake();
-        getModel();
-        getVIN();
-        getYear();
-        System.out.println(make);
-        System.out.println(model);
-        System.out.println(VIN);
-        System.out.println(year);
+        // getModel();
+        // getYear();
+        // getVIN();
+        // System.out.println("Make: " + make);
+        // System.out.println("Model: " + model);
+        // System.out.println("Year: " + year);
+        // System.out.println("VIN: " + VIN);
     }
 }
