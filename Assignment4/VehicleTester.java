@@ -1,8 +1,9 @@
 package Assignment4;
 
-import Assignment3.CreditCard;
-
 public class VehicleTester {
-    Car MyObject1 = new car();
+    public static void main(String[] args) {
 
+        Vehicle vehicle = new Vehicle("Ford", "Mustang", 2007, "1F4GFDYRXGS324567");
+
+    }
 }

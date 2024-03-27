@@ -8,16 +8,13 @@ package Assignment4;
 
 public class Vehicle {
 
-}
-
-class Car {
     private String make;
     private String model;
     private int year;
     private String VIN;
 
-    public void getMake() {
-        System.out.println("Make: " + make);
+    public String getMake() {
+        return make;
     }
 
     public String getModel() {
@@ -57,14 +54,7 @@ class Car {
         setVIN(VIN);
     }
 
-    public void getVehicleInfo() {
-        getMake();
-        getModel();
-        getYear();
-        getVIN();
-        System.out.println("Make: " + make);
-        System.out.println("Model: " + model);
-        System.out.println("Year: " + year);
-        System.out.println("VIN: " + VIN);
+    public String getVehicleInfo() {
+        return "Make: " + getMake() + "\nModel: " + getModel() + "\nYear: " + getYear() + "\nVIN: " + getVIN();
     }
 }
