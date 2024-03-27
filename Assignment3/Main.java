@@ -4,7 +4,7 @@
 
 package Assignment3;
 
-public class Main {
+public class Main {s
     public static void main(String[] args) {
         CreditCard MyObject1 = new CreditCard(); // display defult
         CreditCard MyObject2 = new CreditCard(5312264554231345L, 1, 10, "Jane Smith"); // valid account number
