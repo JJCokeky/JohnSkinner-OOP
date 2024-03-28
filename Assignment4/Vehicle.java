@@ -6,6 +6,7 @@ This program is designed to set and check that vin numbers are valid
 
 package Assignment4;
 
+// Created the Vehicle class
 public class Vehicle {
 
     private String make;
@@ -13,6 +14,7 @@ public class Vehicle {
     private int year;
     private String VIN;
 
+    // Get methods
     public String getMake() {
         return make;
     }
@@ -29,6 +31,7 @@ public class Vehicle {
         return year;
     }
 
+    // Set methods
     public void setMake(String make) {
         this.make = make;
     }
@@ -45,15 +48,18 @@ public class Vehicle {
         this.year = year;
     }
 
+    // constant for Valid vin length
     final byte VALID_VIN_LENGTH = 17;
 
-    public void SetInfo(String make, String model, int year, String VIN) {
+    // putting all the set methods in a constuctor
+    public Vehicle(String make, String model, int year, String VIN) {
         setMake(make);
         setModel(model);
         setYear(year);
         setVIN(VIN);
     }
 
+    // display function
     public String getVehicleInfo() {
         return "Make: " + getMake() + "\nModel: " + getModel() + "\nYear: " + getYear() + "\nVIN: " + getVIN();
     }

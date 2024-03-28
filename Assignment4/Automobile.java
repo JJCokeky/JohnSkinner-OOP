@@ -21,7 +21,7 @@ public class Automobile extends Vehicle {
 
     @Override
     public String getVehicleInfo() {
-        return super.getVehicleInfo() + "\nPower: " + getHorsepower() + "\nFuel Type: ";
+        return super.getVehicleInfo() + "\nPower: " + getHorsepower() + "\nFuel Type: " + getFuelType();
 
     }
 }
