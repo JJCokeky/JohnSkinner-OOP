@@ -1,14 +1,16 @@
 /*
 John Skinner
 2024-03-25
-This program is designed to set and check that vin numbers are valid 
+This program will set, get, and display diffrent types of vehicles.
+
+This class Sets the class Vehicle 
  */
 
 package Assignment4;
 
 // Created the Vehicle class
 public class Vehicle {
-
+    // declare private varables
     private String make;
     private String model;
     private int year;
