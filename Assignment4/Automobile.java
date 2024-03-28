@@ -1,6 +1,6 @@
 package Assignment4;
 
-public class Automobile extends Car {
+public class Automobile extends Vehicle {
     private int horsepower;
     private String fuelType;
 
@@ -16,11 +16,12 @@ public class Automobile extends Car {
         super(make, model, year, VIN);
         this.horsepower = horsepower;
         this.fuelType = fuelType;
+
     }
 
     @Override
     public String getVehicleInfo() {
-        Super.getVehicleInfo();
+        return super.getVehicleInfo() + "\nPower: " + getHorsepower() + "\nFuel Type: ";
 
     }
 }
