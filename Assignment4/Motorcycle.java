@@ -35,13 +35,16 @@ public class Motorcycle extends Vehicle {
     // year, vin from parent class
     public Motorcycle(String make, String model, int year, String VIN, int engineSize, String engineType) {
         super(make, model, year, VIN);
-        this.engineSize = engineSize;
-        this.engineType = engineType;
+        setEngineSize(engineSize);
+        setFuelType(engineType);
     }
 
+    // override and display information from parent class as well as display
+    // Motorcyle spefic info
     @Override
     public String getVehicleInfo() {
-        return super.getVehicleInfo() + "\nEngine Size: " + getEngineSize() + "\nEngine Type: " + getEngineType();
+        return super.getVehicleInfo() + "\nEngine Size: " + getEngineSize() + " cc" + "\nEngine Type: "
+                + getEngineType();
 
     }
 }
