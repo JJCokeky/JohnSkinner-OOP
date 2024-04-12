@@ -1,7 +1,8 @@
-/*
- * needs to be done by the 17th wensday
- * 
- */
+// John Skinner
+// 2024-04-12
+// Object- oriented programing
+// program will pull up a GUI for new paitents to register to our vet clinic 
+
 package Assignment5;
 
 import javax.swing.*;
@@ -9,20 +10,27 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-// Action Listener
-public class PatientRegistryForm implements ActionListener {
+public class PatientRegistryForm extends JFrame implements ActionListener {
 
-    private JTextField patientName;
-    private JTextField ownerName;
-    private JTextField emailAddress;
-    private JLabel patientNameLabel;
-    private JLabel ownerNameLabel;
-    private JLabel emailAddressLabel;
-    private JRadioButton vet1Button;
-    private JRadioButton vet2Button;
+    private JLabel nameLabel, ownerLabel, emailLabel, vetLabel, messageLabel;
+    private JTextField nameField, ownerField, emailField;
+    private JRadioButton vet1Button, vet2Button;
     private ButtonGroup vetButtonGroup;
-    private JButton register;
-    private JButton clear;
-    private JButton exit;
-    private JLabel errorCheck;
+    private JButton registerButton, clearButton, exitButton;
+
+    public VetClinicRegistrationForm() {
+
+        // setting the required fram proporties
+        setTitle("New Patient Registry");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(400, 300);
+        setResizable(false);
+        setLocationRelativeTo(null);
+        setLayout(new GridLayout(5, 3));
+
+        // Text field elements 
+        //making and setting patients name field and label 
+
+    }
+
 }
