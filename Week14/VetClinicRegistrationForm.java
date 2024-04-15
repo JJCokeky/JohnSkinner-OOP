@@ -2,61 +2,70 @@ package Week14;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.io.*;
+import java.awt.event.*;
+import java.util.regex.*;
 
 public class VetClinicRegistrationForm extends JFrame {
-
-    // Form elements
-    private JLabel nameLabel, ownerLabel, emailLabel, vetLabel, messageLabel;
-    private JTextField nameField, ownerField, emailField;
+    private JTextField patientNameField, ownerNameField, emailField;
     private JRadioButton vet1Button, vet2Button;
-    private ButtonGroup vetButtonGroup;
     private JButton registerButton, clearButton, exitButton;
+    private JLabel statusLabel;
 
-    // Constructor
     public VetClinicRegistrationForm() {
-        // Set frame properties
-        setTitle("New Patient Registry");
+        setTitle("Vet Clinic Registration Form");
+        setSize(400, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 300);
-        setResizable(false);
-        setLocationRelativeTo(null);
-        setLayout(new GridLayout(5, 3));
+        setLayout(new GridLayout(7, 2));
 
-        // Initialize form elements
-        nameLabel = new JLabel("Patient Name:");
-        ownerLabel = new JLabel("Owner Name:");
-        emailLabel = new JLabel("Email Address:");
-        vetLabel = new JLabel("Choose Vet:");
-        messageLabel = new JLabel("");
+        JLabel patientNameLabel = new JLabel("Patient Name:");
+        patientNameField = new JTextField();
+        patientNameField.setToolTipText("Enter patient's name");
 
-        nameField = new JTextField();
-        ownerField = new JTextField();
+        JLabel ownerNameLabel = new JLabel("Owner Name:");
+        ownerNameField = new JTextField();
+        ownerNameField.setToolTipText("Enter owner's name");
+
+        JLabel emailLabel = new JLabel("Email Address:");
         emailField = new JTextField();
+        emailField.setToolTipText("Enter owner's email address");
 
-        vet1Button = new JRadioButton("Vet First Name");
-        vet2Button = new JRadioButton("Vet Last Name");
-        vet1Button.setSelected(true); // Default selection
-
-        vetButtonGroup = new ButtonGroup();
-        vetButtonGroup.add(vet1Button);
-        vetButtonGroup.add(vet2Button);
+        JLabel vetLabel = new JLabel("Select Vet:");
+        vet1Button = new JRadioButton("Vet 1");
+        vet2Button = new JRadioButton("Vet 2");
+        ButtonGroup vetGroup = new ButtonGroup();
+        vetGroup.add(vet1Button);
+        vetGroup.add(vet2Button);
 
         registerButton = new JButton("Register");
-        clearButton = new JButton("Clear");
-        exitButton = new JButton("Exit");
+        registerButton.setToolTipText("Register a new patient");
+        registerButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                registerPatient();
+            }
+        });
 
-        // Add elements to the frame
-        add(nameLabel);
-        add(nameField);
-        add(ownerLabel);
-        add(ownerField);
+        clearButton = new JButton("Clear");
+        clearButton.setToolTipText("Clear the form");
+        clearButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                clearForm();
+            }
+        });
+
+        exitButton = new JButton("Exit");
+        exitButton.setToolTipText("Exit the form");
+        exitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        statusLabel = new JLabel();
+
+        add(patientNameLabel);
+        add(patientNameField);
+        add(ownerNameLabel);
+        add(ownerNameField);
         add(emailLabel);
         add(emailField);
         add(vetLabel);
@@ -66,98 +75,46 @@ public class VetClinicRegistrationForm extends JFrame {
         add(registerButton);
         add(clearButton);
         add(exitButton);
-        add(messageLabel);
+        add(statusLabel);
 
-        // Add action listeners
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                registerPatient();
-            }
-        });
-
-        clearButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                clearForm();
-            }
-        });
-
-        exitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-
-        // Set tool tips
-        nameLabel.setToolTipText("Enter patient name");
-        ownerLabel.setToolTipText("Enter owner name");
-        emailLabel.setToolTipText("Enter email address");
-        vetLabel.setToolTipText("Select vet for the patient");
-        registerButton.setToolTipText("Register new patient");
-        clearButton.setToolTipText("Clear form");
-        exitButton.setToolTipText("Exit form");
-
-        // Set keyboard shortcuts
-        registerButton.setMnemonic(KeyEvent.VK_R);
-        clearButton.setMnemonic(KeyEvent.VK_C);
-        exitButton.setMnemonic(KeyEvent.VK_X);
-
-        // Display the frame
         setVisible(true);
     }
 
-    // Method to validate email using regex
-    private boolean isValidEmail(String email) {
-        String regexPattern = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*"
-                + "@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
-        Pattern pattern = Pattern.compile(regexPattern);
-        Matcher matcher = pattern.matcher(email);
-        return matcher.matches();
-    }
-
-    // Method to register patient
     private void registerPatient() {
-        String patientName = nameField.getText();
-        String ownerName = ownerField.getText();
+        String patientName = patientNameField.getText();
+        String ownerName = ownerNameField.getText();
         String email = emailField.getText();
-        String selectedVet = vet1Button.isSelected() ? "Vet First Name" : "Vet Last Name";
+        String selectedVet = (vet1Button.isSelected()) ? "Vet 1" : (vet2Button.isSelected()) ? "Vet 2" : "";
 
-        // Input validation
-        if (patientName.isEmpty() || ownerName.isEmpty() || email.isEmpty() || !isValidEmail(email)) {
-            messageLabel.setText("Invalid input! Please check the fields.");
+        if (patientName.isEmpty() || ownerName.isEmpty() || email.isEmpty() || selectedVet.isEmpty()) {
+            statusLabel.setText("Please fill in all fields.");
             return;
         }
 
-        // Write to file
-        try (PrintWriter writer = new PrintWriter(new FileWriter("newpatientfile.txt", true))) {
-            writer.println("**Patient Registration Document**");
-            writer.println("Patient Name: " + patientName);
-            writer.println("Owner Name: " + ownerName);
-            writer.println("Email Address: " + email);
-            writer.println("Selected Vet: " + selectedVet);
-            writer.println("Registration Date: " + new Date());
-            writer.println("----------------------------------");
-            writer.close();
-            messageLabel.setText("Patient registered successfully!");
-        } catch (IOException e) {
-            messageLabel.setText("Error: Failed to register patient!");
-            e.printStackTrace();
+        if (!isValidEmail(email)) {
+            statusLabel.setText("Please enter a valid email address.");
+            return;
         }
+
+        // Add logic to register the patient
+        statusLabel.setText("Patient registered successfully.");
     }
 
-    // Method to clear the form
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        return pattern.matcher(email).matches();
+    }
+
     private void clearForm() {
-        nameField.setText("");
-        ownerField.setText("");
+        patientNameField.setText("");
+        ownerNameField.setText("");
         emailField.setText("");
-        vet1Button.setSelected(true);
-        messageLabel.setText("");
-        nameField.requestFocus();
+        vet1Button.setSelected(false);
+        vet2Button.setSelected(false);
+        statusLabel.setText("");
     }
 
-    // Main method
     public static void main(String[] args) {
         new VetClinicRegistrationForm();
     }

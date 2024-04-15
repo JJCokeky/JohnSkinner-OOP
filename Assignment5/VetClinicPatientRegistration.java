@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PatientRegistryForm extends JFrame implements ActionListener {
+public class VetClinicPatientRegistration extends JFrame {
 
     private JLabel nameLabel, ownerLabel, emailLabel, vetLabel, messageLabel;
     private JTextField nameField, ownerField, emailField;
@@ -20,7 +20,6 @@ public class PatientRegistryForm extends JFrame implements ActionListener {
 
     public VetClinicRegistrationForm() {
 
-        // setting the required fram proporties
         setTitle("New Patient Registry");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 300);
@@ -28,8 +27,14 @@ public class PatientRegistryForm extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setLayout(new GridLayout(5, 3));
 
-        // Text field elements 
-        //making and setting patients name field and label 
+
+        // make and place patient name
+
+
+        // make and place owner name
+
+
+        // make and place email address 
 
     }
 
