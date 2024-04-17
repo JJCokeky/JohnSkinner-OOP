@@ -5,13 +5,13 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.regex.*;
 
-public class VetClinicRegistrationForm extends JFrame {
+public class NotVetClinicRegistrationForm extends JFrame {
     private JTextField patientNameField, ownerNameField, emailField;
     private JRadioButton vet1Button, vet2Button;
     private JButton registerButton, clearButton, exitButton;
     private JLabel statusLabel;
 
-    public VetClinicRegistrationForm() {
+    public NotVetClinicRegistrationForm() {
         setTitle("Vet Clinic Registration Form");
         setSize(400, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -110,12 +110,11 @@ public class VetClinicRegistrationForm extends JFrame {
         patientNameField.setText("");
         ownerNameField.setText("");
         emailField.setText("");
-        vet1Button.setSelected(false);
-        vet2Button.setSelected(false);
+        vet1Button.setSelected(true);
         statusLabel.setText("");
     }
 
     public static void main(String[] args) {
-        new VetClinicRegistrationForm();
+        new NotVetClinicRegistrationForm();
     }
 }
