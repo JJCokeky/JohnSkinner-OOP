@@ -9,13 +9,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
+// import java.io.File;
+// import java.io.IOException;
 import java.util.regex.Pattern;
-import java.time.LocalDateTime;
-import java.io.FileWriter;
+// import java.time.LocalDateTime;
+// import java.io.FileWriter;
 
-public class VetClinicPatientRegistration extends JFrame {
+public class RegistrationForm extends JFrame {
 
     private JLabel nameLabel, ownerLabel, emailLabel;
     private JLabel vetLabel, statusLabel;
@@ -25,9 +25,9 @@ public class VetClinicPatientRegistration extends JFrame {
     private JButton registerButton, clearButton, exitButton;
     String selectedVet;
 
-    public VetClinicRegistrationForm() {
+    public RegistrationForm() {
 
-        // set window specs 
+        // set window specs
         setTitle("Vet Clinic Registration Form");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 300);
@@ -35,17 +35,17 @@ public class VetClinicPatientRegistration extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new GridLayout(7, 2));
 
-        // make patient name text field and label 
+        // make patient name text field and label
         nameLabel = new JLabel("Patient Name:");
         nameField = new JTextField();
         nameField.setToolTipText("Enter patient's name");
 
-        // make owner name text field and label 
+        // make owner name text field and label
         ownerLabel = new JLabel("Owner Name:");
         ownerField = new JTextField();
         ownerField.setToolTipText("Enter owner's name");
 
-        // make email address with 
+        // make email address with
         emailLabel = new JLabel("Email Address:");
         emailField = new JTextField();
         emailField.setToolTipText("Enter owner's email address");
@@ -57,8 +57,10 @@ public class VetClinicPatientRegistration extends JFrame {
         vetGroup = new ButtonGroup();
         vetGroup.add(vet1Button);
         vetGroup.add(vet2Button);
+        // make vetButton1 defult
+        vet1Button.setSelected(true);
 
-        // make and set fuction to Register button 
+        // make and set fuction to Register button
         registerButton = new JButton("Register");
         registerButton.setToolTipText("Register a new patient");
         registerButton.addActionListener(new ActionListener() {
@@ -76,7 +78,7 @@ public class VetClinicPatientRegistration extends JFrame {
             }
         });
 
-        // make and set the function for the exit button 
+        // make and set the function for the exit button
         exitButton = new JButton("Exit");
         exitButton.setToolTipText("Exit the form");
         exitButton.addActionListener(new ActionListener() {
@@ -85,11 +87,10 @@ public class VetClinicPatientRegistration extends JFrame {
             }
         });
 
-        // make the status label 
+        // make the status label
         statusLabel = new JLabel();
 
-
-        // add everything in order of the grid 
+        // add everything in order of the grid
         add(nameLabel);
         add(nameField);
         add(ownerLabel);
@@ -98,7 +99,7 @@ public class VetClinicPatientRegistration extends JFrame {
         add(emailField);
         add(vetLabel);
         add(vet1Button);
-        // blank label to make everything spaced properly 
+        // blank label to make everything spaced properly
         add(new JLabel());
         add(vet2Button);
         add(registerButton);
@@ -142,11 +143,11 @@ public class VetClinicPatientRegistration extends JFrame {
         // when everything is correct display that they have been registered
         statusLabel.setText("Patient registered");
 
-        LocalDateTime mydate = LocalDateTime.now();
+        // LocalDateTime mydate = LocalDateTime.now();
 
-        File myObj = new File("“**Patient Registration Document**");
-        myObj.write(patientName + ownerName + email + selectedVet + mydate);
-        myWriter.close();
+        // File myObj = new File("“**Patient Registration Document**");
+        // myObj.write(patientName + ownerName + email + selectedVet + mydate);
+        // myWriter.close();
 
     }
 
@@ -167,6 +168,6 @@ public class VetClinicPatientRegistration extends JFrame {
     }
 
     public static void main(String[] args) {
-        new VetClinicRegistrationForm();
+        new RegistrationForm();
     }
 }
