@@ -9,7 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.regex.Pattern;
+import java.time.LocalDateTime;
+import java.io.FileWriter;
 
 public class VetClinicPatientRegistration extends JFrame {
 
@@ -17,7 +21,7 @@ public class VetClinicPatientRegistration extends JFrame {
     private JLabel vetLabel, statusLabel;
     private JTextField nameField, ownerField, emailField;
     private JRadioButton vet1Button, vet2Button;
-    private ButtonGroup vetButtonGroup;
+    private ButtonGroup vetGroup;
     private JButton registerButton, clearButton, exitButton;
     String selectedVet;
 
@@ -47,10 +51,10 @@ public class VetClinicPatientRegistration extends JFrame {
         emailField.setToolTipText("Enter owner's email address");
 
         // make and group the vet radio buttons
-        JLabel vetLabel = new JLabel("Select Vet:");
+        vetLabel = new JLabel("Select Vet:");
         vet1Button = new JRadioButton("Vet 1");
         vet2Button = new JRadioButton("Vet 2");
-        ButtonGroup vetGroup = new ButtonGroup();
+        vetGroup = new ButtonGroup();
         vetGroup.add(vet1Button);
         vetGroup.add(vet2Button);
 
@@ -138,11 +142,31 @@ public class VetClinicPatientRegistration extends JFrame {
         // when everything is correct display that they have been registered
         statusLabel.setText("Patient registered");
 
+        LocalDateTime mydate = LocalDateTime.now();
+
+        File myObj = new File("“**Patient Registration Document**");
+        myObj.write(patientName + ownerName + email + selectedVet + mydate);
+        myWriter.close();
+
     }
 
+    // check that the email is an email with the Regex provided in the assignment
     private boolean isValidEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(emailRegex);
         return pattern.matcher(email).matches();
+    }
+
+    // clear form by setting every field to an empty sting
+    private void clearForm() {
+        nameField.setText("");
+        ownerField.setText("");
+        emailField.setText("");
+        vet1Button.setSelected(true);
+        statusLabel.setText("");
+    }
+
+    public static void main(String[] args) {
+        new VetClinicRegistrationForm();
     }
 }
