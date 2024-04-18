@@ -9,14 +9,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-// import java.io.File;
-// import java.io.IOException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.regex.Pattern;
-// import java.time.LocalDateTime;
-// import java.io.FileWriter;
+import java.time.LocalDateTime;
 
 public class RegistrationForm extends JFrame {
 
+    // declare all my varables
     private JLabel nameLabel, ownerLabel, emailLabel;
     private JLabel vetLabel, statusLabel;
     private JTextField nameField, ownerField, emailField;
@@ -33,6 +33,7 @@ public class RegistrationForm extends JFrame {
         setSize(400, 300);
         setResizable(false);
         setLocationRelativeTo(null);
+        // make the grid
         setLayout(new GridLayout(7, 2));
 
         // make patient name text field and label
@@ -110,7 +111,7 @@ public class RegistrationForm extends JFrame {
         setVisible(true);
     }
 
-    // make the fuction that is called by the register button that does the
+    // make the function that is called by the register button that does the
     // following
     private void registerPatient() {
         // get patients name and store in variable
@@ -130,25 +131,40 @@ public class RegistrationForm extends JFrame {
         // if everything is not filled set status label to show that everything must be
         // filled in
         if (patientName.isEmpty() || ownerName.isEmpty() || email.isEmpty() || selectedVet.isEmpty()) {
-            statusLabel.setText("Please assure all feilds are filled in.");
+            statusLabel.setText("fill all feilds");
             return;
         }
 
         // use the function declared later to check if the email is a valid email
         if (!isValidEmail(email)) {
-            statusLabel.setText("Please enter a valid email address.");
+            statusLabel.setText("invalid email");
             return;
         }
 
         // when everything is correct display that they have been registered
-        statusLabel.setText("Patient registered");
 
-        // LocalDateTime mydate = LocalDateTime.now();
+        LocalDateTime mydate = LocalDateTime.now();
 
-        // File myObj = new File("“**Patient Registration Document**");
-        // myObj.write(patientName + ownerName + email + selectedVet + mydate);
-        // myWriter.close();
+        // try to make and write the file
+        try {
+            // format the string to show all the information required
+            String registrationInfo = String.format(
+                    "Patient Registration Document\n Patient Name: %s\nOwner Name: %s\nEmail: %s\nSelected Vet: %s\nDate: %s",
+                    patientName, ownerName, email, selectedVet, mydate);
 
+            // write the formated string above to the file
+            FileWriter write = new FileWriter("newpatientfile.txt", true);
+            write.write(registrationInfo);
+            write.close();
+
+            statusLabel.setText("Registered and Saved");
+
+        } catch (IOException e) {
+            statusLabel.setText("Failed to save");
+            // pop up an error box
+            JOptionPane.showMessageDialog(this, "Failed to save", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     // check that the email is an email with the Regex provided in the assignment
@@ -167,6 +183,7 @@ public class RegistrationForm extends JFrame {
         statusLabel.setText("");
     }
 
+    // call the form
     public static void main(String[] args) {
         new RegistrationForm();
     }
